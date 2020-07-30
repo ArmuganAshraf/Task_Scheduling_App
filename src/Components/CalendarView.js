@@ -6,7 +6,7 @@ import moment from 'moment';
 //https://momentjs.com/timezone/docs/#:~:text=Default%20time%20zone&text=setDefault(String)%3B,js%20server.
 const localizer = momentLocalizer(moment);
 
-export const CalendarView = ({ eventList, handleEventClick, handleSelectSlot }) => {
+export const CalendarView = ({ eventList, handleEventClick }) => {
   return (
     <Calendar
       selectable={true}
@@ -18,7 +18,6 @@ export const CalendarView = ({ eventList, handleEventClick, handleSelectSlot }) 
       defaultView={'week'}
       views= {[ 'week' ]}
       onSelectEvent={event => handleEventClick(event)}
-      onSelectSlot={event => handleSelectSlot(event)}
     />
   );
 }
