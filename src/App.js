@@ -320,7 +320,7 @@ const generateCSV = (scheduleDays) => {
       <div className="header_title">
         <h2>
         <img src={logo} alt="logo" width="60px"/>
-          Work Schedule
+          Task Scheduling App
         </h2>
       </div>
       <div className="header_options">

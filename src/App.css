@@ -3,6 +3,7 @@
   justify-content:space-between;
   padding: 15px;
   background-image: url('./background.png');
+  background-size: cover;
 }
 
 .driver{
@@ -45,3 +46,4 @@ h2{
 .driver_label2{
   margin-left: 15px;
 }
+
