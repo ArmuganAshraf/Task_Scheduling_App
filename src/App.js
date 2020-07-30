@@ -23,7 +23,7 @@ function App() {
   const [showEvent, setShowEvent] = useState(false);
   const handleCloseEditModal = () => {
     setShowEvent(false);
-    setTaskIndex(-1); // set to -1 when no event is selected
+    reset(); // reset all state if modal is closed with incomplete data
   }
   const handleShowEditModal = () => setShowEvent(true);
 
@@ -31,7 +31,7 @@ function App() {
   const [addEvent, setAddEvent] = useState(false);
   const handleCloseAddModal = () => {
     setAddEvent(false);
-    reset();
+    reset(); // reset all state if modal is closed with incomplete data
   }
   const handleShowAddModal = () => setAddEvent(true);
 
