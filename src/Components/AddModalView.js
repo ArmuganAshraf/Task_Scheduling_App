@@ -1,24 +1,35 @@
-import React from 'react';
-import Modal from 'react-bootstrap/Modal'
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
+import React from "react";
+import Modal from "react-bootstrap/Modal";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 import DatePicker from "react-datepicker";
-import moment from 'moment';
+import moment from "moment";
 
 import "react-datepicker/dist/react-datepicker.css";
-import './Modal.css';
+import "./Modal.css";
 
 /* Modal View for  Adding new Task */
-export const AddModalView = ({ showModal, handleCloseAddModal, handleFormSubmission, changeTaskTitle,
-                            changeTaskLocation, changeTaskDescription, driver, handleDriverSelect,
-                            taskType, handleTaskTypeSelect,taskStartDateTime, handleCalendarStartDateTimeChange,
-                             taskEndDateTime, handleCalendarEndDateTimeChange
-                            }) => {
+export const AddModalView = ({
+  showModal,
+  handleCloseAddModal,
+  handleFormSubmission,
+  changeTaskTitle,
+  changeTaskLocation,
+  changeTaskDescription,
+  driver,
+  handleDriverSelect,
+  taskType,
+  handleTaskTypeSelect,
+  taskStartDateTime,
+  handleCalendarStartDateTimeChange,
+  taskEndDateTime,
+  handleCalendarEndDateTimeChange,
+}) => {
   return (
     <Modal
       show={showModal}
       onHide={handleCloseAddModal}
-      backdrop="static"// disable hiding modal by clicking outside
+      backdrop="static" // disable hiding modal by clicking outside
       keyboard={false} // disable hiding with key stroke
     >
       <Modal.Header closeButton>
@@ -28,15 +39,27 @@ export const AddModalView = ({ showModal, handleCloseAddModal, handleFormSubmiss
         <form onSubmit={handleFormSubmission}>
           <div className="form-group">
             <label htmlFor="task_name">Title</label>
-            <input className="form-control" id="task_name" onChange={changeTaskTitle} />
+            <input
+              className="form-control"
+              id="task_name"
+              onChange={changeTaskTitle}
+            />
             <label htmlFor="task_name">Location</label>
-            <input className="form-control" id="task_location" onChange={changeTaskLocation} />
+            <input
+              className="form-control"
+              id="task_location"
+              onChange={changeTaskLocation}
+            />
             <label htmlFor="task_name">Description</label>
-            <input className="form-control" id="task_description" onChange={changeTaskDescription} />
+            <input
+              className="form-control"
+              id="task_description"
+              onChange={changeTaskDescription}
+            />
           </div>
           <div className="modal_dropdown">
             <label className="modal_dropdown-label">Choose Driver :</label>
-        
+
             <DropdownButton
               alignRight
               title={driver}
@@ -50,7 +73,6 @@ export const AddModalView = ({ showModal, handleCloseAddModal, handleFormSubmiss
           </div>
 
           <div className="modal_dropdown">
-
             <labe className="modal_dropdown-label">Task Type :</labe>
             <DropdownButton
               alignRight
@@ -83,7 +105,7 @@ export const AddModalView = ({ showModal, handleCloseAddModal, handleFormSubmiss
                 minDate={taskStartDateTime}
                 maxDate={taskStartDateTime}
                 minTime={moment(taskStartDateTime).toDate()}
-                maxTime={moment(taskStartDateTime).endOf('day').toDate()}
+                maxTime={moment(taskStartDateTime).endOf("day").toDate()}
                 showTimeSelect
                 dateFormat="Pp"
               />
@@ -98,4 +120,4 @@ export const AddModalView = ({ showModal, handleCloseAddModal, handleFormSubmiss
       </Modal.Body>
     </Modal>
   );
-} 
+};
