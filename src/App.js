@@ -29,7 +29,10 @@ function App() {
 
   /* boolean value to hide or show Add Modal */
   const [addEvent, setAddEvent] = useState(false);
-  const handleCloseAddModal = () => setAddEvent(false);
+  const handleCloseAddModal = () => {
+    setAddEvent(false);
+    reset();
+  }
   const handleShowAddModal = () => setAddEvent(true);
 
     /* boolean value to hide or show Error Modal when a conflict happens */
@@ -54,7 +57,7 @@ function App() {
   const [taskStartDateTime, setTaskStartDateTime] = useState(now);
   const [taskEndDateTime, setTaskEndDateTime] = useState(later);
 
-  const [countItem, setCountItem] = useState(4);
+  const [countItem, setCountItem] = useState(10);
   const sampleCalendarEventList = [
     {
       id: 1,
@@ -353,7 +356,7 @@ function App() {
         step: days
       });
 
-      const csvArray = [['Time Frame', 'B', 'C', 'D']];
+      const csvArray = [['Time Frame', 'Pick-Up', 'Drop-Off', 'Other']];
       setCsvList([]);
 
       /* for each generated Date, we calculate End Date and then look for an Task's Start Date to match and increase

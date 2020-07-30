@@ -2,7 +2,7 @@
 
 A user-friendly task scheduling application for dispatchers to distribute tasks (Pickup, Drop-off, Other) between drivers.
 
-[User Guide](Documentation/Guide.md), [Youtube Demo](Documentation/Guide.md) and [Website](https://taskscheduler-armugan.netlify.app).
+[User Guide](Documentation/Guide.md), [Youtube Demo](https://www.youtube.com/watch?v=qpn3EFxS3PI) and [Website](https://taskscheduler-armugan.netlify.app).
 
 ## Core Functionalities
 
