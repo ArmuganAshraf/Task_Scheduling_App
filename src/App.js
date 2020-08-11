@@ -256,15 +256,15 @@ function App() {
       (e, i) =>
         e.driver === driver &&
         i !== taskIndex &&
-        (moment(taskStartDateTime).isBetween(
-          e["start"],
-          e["end"],
+        (moment(e.start).isBetween(
+          taskStartDateTime,
+          taskEndDateTime,
           undefined,
           []
         ) ||
-          moment(taskEndDateTime).isBetween(
-            e["start"],
-            e["end"],
+          moment(e.end).isBetween(
+            taskStartDateTime,
+            taskEndDateTime,
             undefined,
             []
           ))
@@ -311,13 +311,24 @@ function App() {
       (e, i) =>
         e.driver === driver &&
         i !== taskIndex &&
-        moment(taskStartDateTime).isBetween(e["start"], e["end"], undefined, [])
+        moment(e.start).isBetween(
+          taskStartDateTime,
+          taskEndDateTime,
+          undefined,
+          []
+        )
     );
+
     const isEndDateConflicted = eventList.some(
       (e, i) =>
         e.driver === driver &&
         i !== taskIndex &&
-        moment(taskEndDateTime).isBetween(e["start"], e["end"], undefined, [])
+        moment(e.end).isBetween(
+          taskStartDateTime,
+          taskEndDateTime,
+          undefined,
+          []
+        )
     );
 
     console.log(isStartDateConflicted || isEndDateConflicted);
